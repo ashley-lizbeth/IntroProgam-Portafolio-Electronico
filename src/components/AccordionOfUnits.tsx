@@ -12,7 +12,11 @@ export default function AccordionOfUnits() {
               <ul>
                 {unit.activities.map((activity, activity_index) => (
                   <li>
-                    <a href={`/${unit_index + 1}/${activity_index + 1}`}>
+                    <a
+                      href={`IntroProgam-Portafolio-Electronico/${
+                        unit_index + 1
+                      }/${activity_index + 1}`}
+                    >
                       {activity}
                     </a>
                   </li>
