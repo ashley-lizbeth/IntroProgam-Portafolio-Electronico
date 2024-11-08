@@ -6,18 +6,18 @@ export default function AccordionOfUnits() {
     <Accordion>
       {units.map((unit, unit_index) => {
         return (
-          <Accordion.Item eventKey={unit_index.toString()}>
+          <Accordion.Item key={unit_index} eventKey={unit_index.toString()}>
             <Accordion.Header>{unit.title}</Accordion.Header>
             <Accordion.Body>
-              <ul>
+              <ul className="p-0 text-start">
                 {unit.activities.map((activity, activity_index) => (
-                  <li>
+                  <li className="my-2" key={`${unit_index}.${activity_index}`}>
                     <a
                       href={`/IntroProgam-Portafolio-Electronico/${
                         unit_index + 1
                       }/${activity_index + 1}`}
                     >
-                      {activity}
+                      {unit_index + 1}.{activity_index + 1}. {activity}
                     </a>
                   </li>
                 ))}

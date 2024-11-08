@@ -4,23 +4,49 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Main">
-  <header class="text-center">
-    <h1>Portafolio Electrónico</h1>
+  <header class="text-center pt-5 pb-2 md:mb-5 px-2">
+    <h1 class="font-bold">Portafolio Electrónico</h1>
     <h4>Proyectos desarrollados por</h4>
-    <ul class="flex w-full justify-between">
-      <li class="w-1/3">
-        <p>Ashley Lizbeth Barrera Hermosillo</p>
+    <ul
+      class="flex w-full justify-between md:justify-center my-3 min-[550px]:my-6 min-[550px]:flex-row flex-col px-0"
+    >
+      <li class="min-[550px]:w-1/3 md:w-1/4">
+        <p class="my-0">Ashley Lizbeth Barrera Hermosillo</p>
         <p>220916338</p>
       </li>
-      <li class="w-1/3">
-        <p>Luna Quetzalli Peñaloza Castañeda</p>
+      <li class="min-[550px]:w-1/3 md:w-1/4">
+        <p class="my-0">Luna Quetzalli Peñaloza Castañeda</p>
         <p>221618438</p>
       </li>
-      <li class="w-1/3">
-        <p>Octavio Emmanuel López Ortiz</p>
+      <li class="min-[550px]:w-1/3 md:w-1/4">
+        <p class="my-0">Octavio Emmanuel López Ortiz</p>
         <p>221933767</p>
       </li>
     </ul>
+
+    <div
+      class="min-[550px]:flex-row flex flex-col gap-4 justify-center items-center"
+    >
+      <span class="">
+        <p class="mb-0">Para la materia de</p>
+        <h5 class="mb-2"><b>Fundamentos de la programación</b></h5>
+        <p class="mb-0">Horario:</p>
+        <ul class="p-0">
+          <li>Martes: 11:00 am - 12:55 pm, DUCT2 LC10</li>
+          <li>Jueves: 11:00 am - 12:55 pm, DUCT2 LC08</li>
+        </ul>
+      </span>
+      <img
+        src="/IntroProgam-Portafolio-Electronico/img/UDG_CUCEI.png"
+        class="min-[550px]:w-1/4 w-1/2 md:w-1/6"
+        alt="UDG, CUCEI"
+      />
+    </div>
   </header>
-  <AccordionOfUnits client:only="react" />
+  <article
+    class="px-10 py-10 md:py-5 text-center md:px-20 lg:px-32 bg-neutral-100"
+  >
+    <h2>Unidades</h2>
+    <AccordionOfUnits client:only="react" />
+  </article>
 </Layout>
