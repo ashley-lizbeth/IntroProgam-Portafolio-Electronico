@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
 import units from "../../units";
+import Layout from "../../layouts/Layout.astro";
 
 interface Path {
   params: {
@@ -31,8 +32,9 @@ const activity_number = Number(activity) - 1;
 const title = units[unit_number].activities[activity_number];
 ---
 
-<h1>
-  {title}
-</h1>
-'/docs/{unit}-{activity}.pdf'
-
+<Layout title={title}>
+  <h1>
+    {title}
+  </h1>
+  '/docs/{unit}-{activity}.pdf'
+</Layout>
