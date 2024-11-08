@@ -1,0 +1,38 @@
+---
+import type { GetStaticPaths } from "astro";
+import units from "../../units";
+
+interface Path {
+  params: {
+    unit: string;
+    activity: string;
+  };
+}
+
+export const getStaticPaths = (() => {
+  const paths: Path[] = [];
+
+  units.forEach((unit, i) => {
+    unit.activities.forEach((_, j) => {
+      paths.push({
+        params: { unit: (i + 1).toString(), activity: (j + 1).toString() },
+      });
+    });
+  });
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { unit, activity } = Astro.params;
+
+const unit_number = Number(unit) - 1;
+const activity_number = Number(activity) - 1;
+
+const title = units[unit_number].activities[activity_number];
+---
+
+<h1>
+  {title}
+</h1>
+'/docs/{unit}-{activity}.pdf'
+
